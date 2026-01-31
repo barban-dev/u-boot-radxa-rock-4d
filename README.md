@@ -1,2 +1,2 @@
 # u-boot-radxa-rock-4d
-Custom U-Boot for Radxa ROCK 4D (RK3576) with full USB Boot support. Overcomes factory limitations to allow automatic booting from USB storage.
+This repository provides a custom-built U-Boot firmware for the Radxa ROCK 4D (RK3576). Unlike the stock bootloader from the vendor, this version is specifically configured to initialize the onboard USB 3.0/2.0 controllers and the Naneng Combo PHY, enabling seamless and automatic booting from USB drives.
