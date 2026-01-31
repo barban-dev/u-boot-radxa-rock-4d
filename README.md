@@ -14,15 +14,15 @@ The following steps were performed to generate the working firmware:
 ### 1. Source and binaries retrieval
 ```bash
 # Clone Rockchip binary blobs (TPL/BL31)
-git clone --depth 1 https://github.com
+git clone --depth 1 https://github.com/rockchip-linux/rkbin
 
 # Clone Mainline U-Boot
-git clone https://source.denx.de
-cd u-boot
+git clone https://source.denx.de/u-boot/u-boot.git
 ```
 
 ### 2. Environment Configuration
 ```bash
+cd u-boot
 export BL31=../rkbin/bin/rk35/rk3576_bl31_v1.20.elf
 export ROCKCHIP_TPL=../rkbin/bin/rk35/rk3576_ddr_lp4_2112MHz_lp5_2736MHz_v1.09.bin
 
@@ -40,9 +40,9 @@ The following options were enabled to ensure full USB support while keeping the 
 *   **SPL Compatibility:** `CONFIG_SPL_USB_HOST=n` (disabled to prevent SPL size overflow and linker errors)
 *   **Controller Limit:** `CONFIG_USB_HOST_MAX=2`
 
-Instead of manually configuring the build via `make menuconfig`, you can use the pre-configured `.config` file provided in this repository:
+Instead of manually configuring the build via `make menuconfig`, you can use the pre-configured config file in this repository:
 
-1. Download the `.config` file from this repo.
+1. Download the `rock-4d-rk3576_u-boot_usb_defconfig` file from this repo.
 2. Rename the file as `.config` and place it into your `u-boot` source root directory.
 3. Skip the `make menuconfig` step and proceed directly to compilation.
 
