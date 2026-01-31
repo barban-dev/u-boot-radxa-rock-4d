@@ -59,6 +59,11 @@ sudo head -c $(stat -c%s u-boot-rockchip-spi.bin) /dev/mtdblock0 | md5sum
 md5sum u-boot-rockchip-spi.bin
 ```
 
+## Results
+After flashing this U-Boot to the SPI Flash, the ROCK 4D is capable of:
+* Initializing the USB bus automatically at power-on.
+* Detecting USB Mass Storage devices.
+* Booting Linux distributions (like Armbian) stored on USB disks without any manual console commands.
 
 
 
