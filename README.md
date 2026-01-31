@@ -40,6 +40,12 @@ The following options were enabled to ensure full USB support while keeping the 
 *   **SPL Compatibility:** `CONFIG_SPL_USB_HOST=n` (disabled to prevent SPL size overflow and linker errors)
 *   **Controller Limit:** `CONFIG_USB_HOST_MAX=2`
 
+Instead of manually configuring the build via `make menuconfig`, you can use the pre-configured `.config` file provided in this repository:
+
+1. Download the `.config` file from this repo.
+2. Rename the file as `.config` and place it into your `u-boot` source root directory.
+3. Skip the `make menuconfig` step and proceed directly to compilation.
+
 ### 4. Compilation
 The build produces the file `u-boot-rockchip-spi.bin`, which is ready to be flashed to the onboard SPI Flash.
 ```bash
