@@ -30,14 +30,36 @@ export ROCKCHIP_TPL=../rkbin/bin/rk35/rk3576_ddr_lp4_2112MHz_lp5_2736MHz_v1.09.b
 make rock-4d-rk3576_defconfig
 ```
 
-### 3. Key Modifications (`make menuconfig`)
+### 3. Key config modifications (`make menuconfig`)
 The following options were enabled to ensure full USB support while keeping the SPL (Secondary Program Loader) size within limits and avoiding compilation errors:
 
-*   **General USB:** `CONFIG_USB=y`, `CONFIG_DM_USB=y`, `CONFIG_USB_HOST=y`
+*   **USB Host Support:** `CONFIG_USB=y`, `CONFIG_USB_HOST=y`, `CONFIG_DM_USB=y`, 
 *   **Drivers:** `CONFIG_USB_XHCI_HCD=y`, `CONFIG_USB_XHCI_DWC3=y`, `CONFIG_USB_DWC3=y`, `CONFIG_USB_DWC3_GENERIC=y`
 *   **PHY Support:** `CONFIG_PHY_ROCKCHIP_NANENG_COMBPHY=y`, `CONFIG_PHY_ROCKCHIP_INNO_USB2=y`
 *   **Storage:** `CONFIG_USB_STORAGE=y`
-*   **SPL Compatibility:** `CONFIG_SPL_USB_HOST=n` (crucial to prevent linker errors and size overflow during the SPL phase).
+*   **SPL Compatibility:** `CONFIG_SPL_USB_HOST=n` (disabled to prevent SPL size overflow and linker errors)
+*   **Controller Limit:** `CONFIG_USB_HOST_MAX=2`
+
+### 4. Compilation
+The build produces the file `u-boot-rockchip-spi.bin`, which is ready to be flashed to the onboard SPI Flash.
+```bash
+make
+```
+
+### 5. Flash to SPI Flash
+From a running Linux system on the ROCK 4D, identify the SPI device (usually `/dev/mtdblock0`) and run:
+```bash
+# Reset SPI flash (optional but recommended)
+sudo dd if=/dev/zero of=/dev/mtdblock0 bs=1M count=4 2>/dev/null
+# flash the SPI bootloader
+sudo dd if=u-boot-rockchip-spi.bin of=/dev/mtdblock0 bs=4K
+sync
+# Verify written image (optional but recommended): the two commands below should give the same result 
+sudo head -c $(stat -c%s u-boot-rockchip-spi.bin) /dev/mtdblock0 | md5sum
+md5sum u-boot-rockchip-spi.bin
+```
+
+
 
 
 
