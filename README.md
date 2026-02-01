@@ -63,7 +63,7 @@ sudo apt-get install bc bison build-essential coccinelle \
 # Build the u-boot firmware
 make
 ```
-Alternative: `make ARCH=arm64 CROSS_COMPILE=aarch64-linux-gnu-` for cross-compilation on a x86_64 PC.
+Alternative: `make ARCH=arm64 CROSS_COMPILE=aarch64-linux-gnu-` for u-boot cross-compilation on a x86_64 PC.
 
 ### 5. Flash to SPI Flash
 From a running Linux system on the ROCK 4D, identify the SPI device (usually `/dev/mtdblock0`) and run:
