@@ -145,7 +145,7 @@ To quantify the benefits of enabling USB 3.2 boot support, a comparative I/O per
 
 
 ### Conclusions
-1.  **Speed:** The USB 3.2 SSD is **12.5x faster** than the internal storage in sequential write operations.
+1.  **Speed:** The USB 3.2 SSD is **12.5x faster** than the A1-rated microSD card in sequential write operations.
 2.  **Responsiveness:** The average latency on the USB drive is **13x lower** (51ms vs 660ms), which significantly improves system responsiveness, especially during heavy I/O tasks or software updates.
 3.  **IOPS:** The USB setup handles over **2400 operations per second**, compared to fewer than 200 on the sdcard media, making it a superior choice for running a database or a desktop environment.
 
