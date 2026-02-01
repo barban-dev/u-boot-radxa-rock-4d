@@ -151,3 +151,4 @@ To quantify the benefits of enabling USB 3.2 boot support, a comparative I/O per
 
 Enabling USB boot via this custom U-Boot build doesn't just provide a convenient storage alternative; it unlocks a massive performance tier for the ROCK 4D, transforming it from a standard SBC into a high-performance node capable of saturating the USB 3.0 bus.
 
+
