@@ -5,7 +5,7 @@ This repository provides a custom-built U-Boot firmware for the Radxa ROCK 4D (R
 
 1. **Vendor Limitations:** The official Radxa ROCK 4D bootloader does not support booting from USB disks; it is primarily designed for eMMC, SD, or NVMe storage via the board built-in FPC connector.
 2. **OS Limitations:** Standard OS images (such as Raspbian or Debian ports for ROCK 4D) include a bootloader that lacks the necessary drivers to initialize the USB controllers during the boot sequence.
-3. **The Solution:** A custom compilation of U-Boot from source, specifically tailored for the RK3576 SoC, to include USB Host, xHCI, and Naneng Combo PHY support.
+3. **Solution:** A custom configuration of Mainlline U-Boot from source, specifically tailored for the ROCK 4D (RK3576), to include USB Host, xHCI, and Naneng Combo PHY support.
 
 ## Build Process
 
