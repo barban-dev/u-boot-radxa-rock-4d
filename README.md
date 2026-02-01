@@ -65,13 +65,24 @@ sudo head -c $(stat -c%s u-boot-rockchip-spi.bin) /dev/mtdblock0 | md5sum
 md5sum u-boot-rockchip-spi.bin
 ```
 
-## Results
+## Expected Results
 After flashing this U-Boot to the SPI Flash, the ROCK 4D is capable of:
 * Initializing the USB bus automatically at power-on.
 * Detecting USB Mass Storage devices.
 * Booting Linux distributions (like Armbian) stored on USB disks without any manual console commands.
 
+## Verified Test Environment
+The custom U-Boot build has been successfully verified with the following configuration:
 
+### Operating System
+*   **Linux Distribution:** Armbian 26.2.0-trunk.363 (Ubuntu 24.04 LTS "noble")
+*   **Kernel:** Mainline-based Armbian build for ROCK 4D
 
+### Storage Hardware
+*   **Device:** **SSK USB 3.2 SSD Flash Drive**
+*   **Controller:** VIA Labs, Inc. VL817 SATA Adaptor (ID 2109:0715)
+*   **Interface:** USB 3.1 SuperSpeed (bcdUSB 3.10)
+*   **Performance:** Successfully initialized as a Mass Storage device (SCSI Bulk-Only) during the U-Boot sequence.
 
-
+### Obtained result
+U-Boot initializes the USB 3.x controller, detects the VIA Labs bridge, and hands over the boot sequence to Armbian without any manual console intervention.
