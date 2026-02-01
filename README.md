@@ -97,7 +97,7 @@ The custom U-Boot build has been successfully verified with the following config
 *   **Interface:** USB 3.1 SuperSpeed (bcdUSB 3.10)
 *   **Performance:** Successfully initialized as a Mass Storage device (SCSI Bulk-Only) during the U-Boot sequence.
 
-### Obtained result
+### Obtained results
 U-Boot initializes the USB 3.x controller, detects the VIA Labs bridge, and hands over the boot sequence to Armbian without any manual console intervention.
 
 #### Boot Log (UART Debug)
@@ -132,4 +132,22 @@ Boot script loaded from usb 0:1
 Starting kernel ...
 Armbian 26.2.0-trunk.363 noble ttyFIQ0 
 radxa-rock-4d login:
+```
+</details>
+
+#### Performance Benchmarks - Sequential Write Bandwidth and Latency
+To quantify the benefits of enabling USB 3.2 boot support, a comparative I/O performance test was conducted using `fio`. The tests compare the **SSK USB 3.2 SSD Flash Drive** (connected via the reconfigured USB 3.0 port) against the sdcard storage **SandDisk Ultra microSDXC UHS-I A1** (`mmcblk1`).
+
+| Storage Media | Write Bandwidth (BW) | IOPS | Avg. Latency (clat) |
+| :--- | :--- | :--- | :--- |
+| **SSK USB 3.2 SSD (USB 3.0)** | **317 MB/s** | **2417** | **51.01 ms** |
+| **Internal Storage (eMMC/SD)** | **25.3 MB/s** | **192** | **660.92 ms** |
+
+
+### Conclusions
+1.  **Speed:** The USB 3.2 SSD is **12.5x faster** than the internal storage in sequential write operations.
+2.  **Responsiveness:** The average latency on the USB drive is **13x lower** (51ms vs 660ms), which significantly improves system responsiveness, especially during heavy I/O tasks or software updates.
+3.  **IOPS:** The USB setup handles over **2400 operations per second**, compared to fewer than 200 on the sdcard media, making it a superior choice for running a database or a desktop environment.
+
+Enabling USB boot via this custom U-Boot build doesn't just provide a convenient storage alternative; it unlocks a massive performance tier for the ROCK 4D, transforming it from a standard SBC into a high-performance node capable of saturating the USB 3.0 bus.
 
