@@ -49,6 +49,18 @@ Instead of manually configuring the build via `make menuconfig`, you can use the
 ### 4. Native Compilation on ROCK 4D SBC board
 The build produces the file `u-boot-rockchip-spi.bin`, which is ready to be flashed to the onboard SPI Flash.
 ```bash
+# Pre-requisites
+sudo apt-get install bc bison build-essential coccinelle \
+  device-tree-compiler dfu-util efitools flex gdisk graphviz imagemagick \
+  libgnutls28-dev libguestfs-tools libncurses-dev \
+  libpython3-dev libsdl2-dev libssl-dev lz4 lzma lzma-alone openssl \
+  pkg-config python3 python3-asteval python3-coverage python3-filelock \
+  python3-pkg-resources python3-pycryptodome python3-pyelftools \
+  python3-pytest python3-pytest-xdist python3-sphinxcontrib.apidoc \
+  python3-sphinx-rtd-theme python3-subunit python3-testtools \
+  python3-venv swig uuid-dev
+
+# Build the u-boot firmware
 make
 ```
 Alternative: `make ARCH=arm64 CROSS_COMPILE=aarch64-linux-gnu-` for cross-compilation on a x86_64 PC.
