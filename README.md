@@ -26,7 +26,7 @@ cd u-boot
 export BL31=../rkbin/bin/rk35/rk3576_bl31_v1.20.elf
 export ROCKCHIP_TPL=../rkbin/bin/rk35/rk3576_ddr_lp4_2112MHz_lp5_2736MHz_v1.09.bin
 
-# Apply the default configuration for the ROCK 4D
+# Apply the default U-Boot configuration for the ROCK 4D
 make rock-4d-rk3576_defconfig
 ```
 
