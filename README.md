@@ -79,7 +79,7 @@ md5sum u-boot-rockchip-spi.bin
 ```
 
 ## Expected Results
-Using this U-Boot firmware, the ROCK 4D board should be capable of:
+Using this custom U-Boot build, the ROCK 4D board should be capable of:
 * Initializing the USB bus automatically at power-on.
 * Detecting USB Mass Storage devices.
 * Booting Linux distributions (like Armbian) stored on USB disks without any manual console commands.
