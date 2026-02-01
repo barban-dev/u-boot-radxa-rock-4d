@@ -16,7 +16,7 @@ The following steps were performed to generate the working firmware:
 # Clone Rockchip binary blobs (TPL/BL31)
 git clone --depth 1 https://github.com/rockchip-linux/rkbin
 
-# Clone Mainline U-Boot
+# Clone Mainline U-Boot source code
 git clone https://source.denx.de/u-boot/u-boot.git
 ```
 
