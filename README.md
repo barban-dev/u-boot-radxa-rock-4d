@@ -141,7 +141,7 @@ To quantify the benefits of enabling USB 3.2 boot support, a comparative I/O per
 | Storage Media | Write Bandwidth (BW) | IOPS | Avg. Latency (clat) |
 | :--- | :--- | :--- | :--- |
 | **SSK USB 3.2 SSD (USB 3.0)** | **317 MB/s** | **2417** | **51.01 ms** |
-| **A1 Sdcard** | **25.3 MB/s** | **192** | **660.92 ms** |
+| **SandDisk Ultra microSDXC UHS-I A1 sdcard** | **25.3 MB/s** | **192** | **660.92 ms** |
 
 
 ### Conclusions
