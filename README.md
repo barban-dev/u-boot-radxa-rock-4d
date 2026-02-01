@@ -37,8 +37,8 @@ The following options were enabled to ensure full USB support while keeping the 
 *   **Drivers:** `CONFIG_USB_XHCI_HCD=y`, `CONFIG_USB_XHCI_DWC3=y`, `CONFIG_USB_DWC3=y`, `CONFIG_USB_DWC3_GENERIC=y`
 *   **PHY Support:** `CONFIG_PHY_ROCKCHIP_NANENG_COMBPHY=y`, `CONFIG_PHY_ROCKCHIP_INNO_USB2=y`
 *   **Storage:** `CONFIG_USB_STORAGE=y`
-*   **SPL Compatibility:** `CONFIG_SPL_USB_HOST=n` (disabled to prevent SPL size overflow and linker errors)
 *   **Controller Limit:** `CONFIG_USB_HOST_MAX=2`
+*   **SPL Compatibility:** `CONFIG_SPL_USB_HOST=n` (disabled to prevent SPL size overflow and linker errors)
 
 Instead of manually configuring the build via `make menuconfig`, you can use the pre-configured config file in this repository:
 
