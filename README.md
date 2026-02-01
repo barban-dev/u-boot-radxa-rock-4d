@@ -97,7 +97,7 @@ The custom U-Boot build has been successfully verified with the following config
 *   **Interface:** USB 3.1 SuperSpeed (bcdUSB 3.10)
 
 ### Obtained results
-U-Boot initializes the USB 3.x controller, detects the VIA Labs bridge, and hands over the boot sequence to Armbian without any manual console intervention.
+U-Boot initializes the USB 3.x controller, detects the VIA Labs bridge, and hands over the boot sequence to Armbian OS without any manual UART console intervention.
 
 #### Boot Log (UART Debug)
 
