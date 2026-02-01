@@ -95,7 +95,6 @@ The custom U-Boot build has been successfully verified with the following config
 *   **Device:** **SSK USB 3.2 SSD Flash Drive**
 *   **Controller:** VIA Labs, Inc. VL817 SATA Adaptor (ID 2109:0715)
 *   **Interface:** USB 3.1 SuperSpeed (bcdUSB 3.10)
-*   **Performance:** Successfully initialized as a Mass Storage device (SCSI Bulk-Only) during the U-Boot sequence.
 
 ### Obtained results
 U-Boot initializes the USB 3.x controller, detects the VIA Labs bridge, and hands over the boot sequence to Armbian without any manual console intervention.
