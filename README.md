@@ -100,7 +100,7 @@ The custom U-Boot build has been successfully verified with the following config
 ### Obtained result
 U-Boot initializes the USB 3.x controller, detects the VIA Labs bridge, and hands over the boot sequence to Armbian without any manual console intervention.
 
-## Boot Log (UART Debug)
+#### Boot Log (UART Debug)
 
 <details>
 <summary>Click to expand the full boot sequence log</summary>
