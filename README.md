@@ -99,3 +99,37 @@ The custom U-Boot build has been successfully verified with the following config
 
 ### Obtained result
 U-Boot initializes the USB 3.x controller, detects the VIA Labs bridge, and hands over the boot sequence to Armbian without any manual console intervention.
+
+## Boot Log (UART Debug)
+
+<details>
+<summary>Click to expand the full boot sequence log</summary>
+
+```text
+DR 2f85f4b2d4 cym 24/11/07-19:07:28,fwver: v1.09
+In
+ch0 ttot6
+ch1 ttot6
+... [DDR Initialization] ...
+U-Boot SPL 2026.04-rc1-00063-geed514b11d04 (Jan 31 2026 - 22:29:40 +0100)
+Trying to boot from SPI
+## Checking hash(es) for config config-1 ... OK
+...
+U-Boot 2026.04-rc1-00063-geed514b11d04 (Jan 31 2026 - 22:29:40 +0100)
+Model: Radxa ROCK 4D
+SoC:   RK3576
+DRAM:  4 GiB
+...
+USB XHCI 1.10
+USB XHCI 1.10
+Bus usb@23000000: 2 USB Device(s) found
+Bus usb@23400000: 3 USB Device(s) found
+Scanning bootdev 'usb_mass_storage.lun0.bootdev':
+  0  script       ready   usb_mass_    1  usb_mass_storage.lun0.boo /boot/boot.scr
+** Booting bootflow 'usb_mass_storage.lun0.bootdev.part_1' with script
+Boot script loaded from usb 0:1
+...
+Starting kernel ...
+Armbian 26.2.0-trunk.363 noble ttyFIQ0 
+radxa-rock-4d login:
+
