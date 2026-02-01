@@ -7,7 +7,7 @@ This repository provides a custom-built U-Boot firmware for the Radxa ROCK 4D (R
 2. **OS Limitations:** Standard OS images (such as Raspbian or Debian ports for ROCK 4D) include a bootloader that lacks the necessary drivers to initialize the USB controllers during the boot sequence.
 3. **Solution:** A custom configuration of Mainlline U-Boot from source, specifically tailored for the ROCK 4D (RK3576), to include USB Host, xHCI, and Naneng Combo PHY support.
 
-## Build Process
+## Build Processon 
 
 The following steps were performed to generate the working firmware:
 
@@ -46,11 +46,12 @@ Instead of manually configuring the build via `make menuconfig`, you can use the
 2. Rename the file as `.config` and place it into your `u-boot` source root directory.
 3. Skip the `make menuconfig` step and proceed directly to compilation.
 
-### 4. Compilation
+### 4. Native Compilation on ROCK 4D SBC board
 The build produces the file `u-boot-rockchip-spi.bin`, which is ready to be flashed to the onboard SPI Flash.
 ```bash
 make
 ```
+Alternative: `make ARCH=arm64 CROSS_COMPILE=aarch64-linux-gnu-` for cross-compilation on a x86_64 PC.
 
 ### 5. Flash to SPI Flash
 From a running Linux system on the ROCK 4D, identify the SPI device (usually `/dev/mtdblock0`) and run:
